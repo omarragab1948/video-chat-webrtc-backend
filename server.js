@@ -13,12 +13,15 @@ const app = express();
 // Use the cors middleware to enable CORS for all routes and specify the allowed origin
 const server = http.createServer(app); // Create an HTTP server
 
+// ...
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend's origin
+    origin: "*", // Allow requests from any origin
     credentials: true, // Enable credentials (cookies, authorization headers, etc.) if needed
   })
 );
+// ...
+
 
 const storage = multer.memoryStorage(); // Store files in memory
 const upload = multer({ storage });
